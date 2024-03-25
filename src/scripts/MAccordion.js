@@ -48,7 +48,10 @@ export default class MAccordion
             _el._loop_height = _el.offsetHeight;
 
             _el.setAttribute( _options.processed, "" );
-            _el.style["height"] = _el._loop_title.offsetHeight + "px";
+            
+            if( !_el.classList.contains(this.options.cls_active) ) {
+                _el.style["height"] = _el._loop_title.offsetHeight + "px";
+            }
 
             _el.addEventListener( "click", this._OnBtn(_el) );
         });
